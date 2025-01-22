@@ -10,6 +10,7 @@ onMounted(() => {
   AOS.init({
     duration: 500,
     easing: "ease-out",
+    once: true,
   });
 
   setTimeout(() => {
