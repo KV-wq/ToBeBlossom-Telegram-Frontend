@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.container {
+  padding: 3rem 1.5rem 3rem 1.5rem;
+}
