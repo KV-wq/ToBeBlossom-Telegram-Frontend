@@ -7,13 +7,7 @@ const checked = ref(false);
 
 <template>
   <div class="container">
-    <h2
-      class="text-4xl font-bold text-start"
-      data-aos="fade-right"
-      data-aos-duration="600"
-    >
-      Регистрация
-    </h2>
+    <h2 class="text-4xl font-bold text-start">Регистрация</h2>
 
     <form class="mt-5">
       <div class="flex flex-col gap-4">
