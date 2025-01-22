@@ -5,8 +5,9 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
-  background: white !important;
-  background-color: white !important;
+  background: white;
+  max-height: 100vh !important;
+  overflow: hidden !important;
 }
 
 .container {
