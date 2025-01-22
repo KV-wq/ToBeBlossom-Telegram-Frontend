@@ -47,7 +47,7 @@ const submitForm = () => {
           type="text"
           id="phone-input"
           aria-describedby="phone-helper-text"
-          class="border border-black text-gray-800 text-2xl font-semibold rounded-lg block w-full ps-12 p-2.5 placeholder:text-gray-800 placeholder: placeholder:font-semibold transition-all"
+          class="border border-black text-gray-800 text-2xl font-semibold rounded-lg block w-full ps-12 p-2.5 placeholder:text-gray-500 placeholder:font-semibold transition-all"
           v-model="formattedNumber"
           @input="handleInput"
           placeholder="(000) 555-55-55"
