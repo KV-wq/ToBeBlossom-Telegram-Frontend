@@ -117,5 +117,6 @@ const checked = ref(false);
         :disabled="!checked"
       />
     </form>
+    <div class="w-full h-72"></div>
   </div>
 </template>
