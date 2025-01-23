@@ -79,7 +79,7 @@ onUnmounted(() => {
         <input
           v-for="(digit, index) in digits"
           :key="index"
-          type="text"
+          type="number"
           maxlength="1"
           @input="handleInput($event, index)"
           @keydown="handleKeyDown($event, index)"

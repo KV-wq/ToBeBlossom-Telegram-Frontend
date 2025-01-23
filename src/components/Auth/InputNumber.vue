@@ -44,7 +44,7 @@ const submitForm = () => {
           <span class="text-gray-800 text-2xl font-semibold">+7</span>
         </div>
         <input
-          type="text"
+          type="tel"
           id="phone-input"
           aria-describedby="phone-helper-text"
           class="border border-black text-gray-800 text-2xl font-semibold rounded-lg block w-full ps-12 p-2.5 placeholder:text-gray-500 placeholder:font-semibold transition-all"
