@@ -1,6 +1,14 @@
 <script setup>
+import { ref } from "vue";
 import Button from "../components/Button.vue";
 import router from "../router/router";
+
+const selectedType = ref("self_employed");
+const bankTypes = [
+  { id: "self_employed", label: "Самозанятый" },
+  { id: "person", label: "Физ. лицо" },
+  { id: "individual", label: "ИП" },
+];
 
 const savePersonal = () => {};
 const back = () => {
@@ -9,113 +17,106 @@ const back = () => {
 </script>
 
 <template>
-  <div class="container" data-aos="fade-right" data-aos-duration="500">
-    <h2 class="text-2xl font-bold">Добавление счета</h2>
+  <div class="bg-gray-50 rounded-2xl p-6 max-w-2xl mx-auto">
+    <h2 class="text-2xl font-medium text-gray-900">Добавление счета</h2>
 
-    <form class="mt-4">
+    <form class="mt-8 space-y-6">
+      <!-- ФИО -->
       <div>
-        <label for="fullname" class="block text-gray-900 font-medium text-xl"
-          >ФИО</label
-        >
-        <div class="mt-2">
-          <input
-            value="Иванов Иван Иванович"
-            readonly
-            type="text"
-            name="fullname"
-            class="block w-full text-xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 outline-none"
-          />
-        </div>
+        <label class="text-sm font-medium text-gray-700">ФИО</label>
+        <input
+          value="Иванов Иван Иванович"
+          readonly
+          type="text"
+          class="mt-2 w-full px-3 py-2 bg-gray-100 text-gray-900 rounded-xl border-0 outline-none"
+        />
       </div>
 
-      <div class="mt-4 mb-6">
-        <div class="flex select-none">
-          <label class="flex items-center justify-center cursor-pointer radio">
-            <input class="hidden peer" name="radio" type="radio" checked />
-            <span
-              class="relative text-lg font-medium text-gray-500 text-shadow-sm transition-all duration-300 after:opacity-0 peer-checked:after:opacity-100 peer-checked:after:transition-all peer-checked:after:duration-300 peer-checked:text-black peer-checked:after:content-[''] peer-checked:after:block peer-checked:after:w-1/2 peer-checked:after:h-0.5 peer-checked:after:bg-black/70 peer-checked:after:rounded-md peer-checked:after:absolute peer-checked:after:right-0 peer-checked:after:-bottom-1 peer-checked:before:content-[''] peer-checked:before:block peer-checked:before:w-full peer-checked:before:h-0.5 peer-checked:before:bg-black before:opacity-0 peer-checked:before:opacity-100 peer-checked:before:transition-all peer-checked:before:duration-300 peer-checked:before:rounded-md peer-checked:before:absolute peer-checked:before:right-0 peer-checked:before:bottom-0"
-              >Самозанятый</span
-            >
-          </label>
-
-          <label
-            class="flex items-center justify-center flex-grow cursor-pointer radio"
+      <!-- Тип счета -->
+      <div>
+        <label class="text-sm font-medium text-gray-700">Тип счета</label>
+        <div class="mt-2 grid grid-cols-3 gap-4">
+          <button
+            v-for="type in bankTypes"
+            :key="type.id"
+            type="button"
+            @click="selectedType = type.id"
+            :class="[
+              'px-auto py-2 rounded-xl text-sm font-medium transition-colors',
+              selectedType === type.id
+                ? 'bg-black/80 text-white'
+                : 'bg-white text-gray-700 hover:bg-gray-50',
+            ]"
           >
-            <input class="hidden peer" name="radio" type="radio" />
-            <span
-              class="relative text-lg font-medium text-gray-500 text-shadow-sm transition-all duration-300 after:opacity-0 peer-checked:after:opacity-100 peer-checked:after:transition-all peer-checked:after:duration-300 peer-checked:text-black peer-checked:after:content-[''] peer-checked:after:block peer-checked:after:w-1/2 peer-checked:after:h-0.5 peer-checked:after:bg-black/70 peer-checked:after:rounded-md peer-checked:after:absolute peer-checked:after:right-0 peer-checked:after:-bottom-1 peer-checked:before:content-[''] peer-checked:before:block peer-checked:before:w-full peer-checked:before:h-0.5 peer-checked:before:bg-black before:opacity-0 peer-checked:before:opacity-100 peer-checked:before:transition-all peer-checked:before:duration-300 peer-checked:before:rounded-md peer-checked:before:absolute peer-checked:before:right-0 peer-checked:before:bottom-0"
-              >Физ. лицо</span
-            >
-          </label>
-          <label class="flex items-center justify-center cursor-pointer radio">
-            <input class="hidden peer" name="radio" type="radio" />
-            <span
-              class="relative text-lg font-medium text-gray-500 text-shadow-sm transition-all duration-300 after:opacity-0 peer-checked:after:opacity-100 peer-checked:after:transition-all peer-checked:after:duration-300 peer-checked:text-black peer-checked:after:content-[''] peer-checked:after:block peer-checked:after:w-1/2 peer-checked:after:h-0.5 peer-checked:after:bg-black/70 peer-checked:after:rounded-md peer-checked:after:absolute peer-checked:after:right-0 peer-checked:after:-bottom-1 peer-checked:before:content-[''] peer-checked:before:block peer-checked:before:w-full peer-checked:before:h-0.5 peer-checked:before:bg-black before:opacity-0 peer-checked:before:opacity-100 peer-checked:before:transition-all peer-checked:before:duration-300 peer-checked:before:rounded-md peer-checked:before:absolute peer-checked:before:right-0 peer-checked:before:bottom-0"
-              >ИП</span
-            >
-          </label>
+            {{ type.label }}
+          </button>
         </div>
       </div>
 
-      <div class="mb-4">
-        <label for="bik" class="block text-gray-900 font-medium text-xl"
-          >БИК</label
-        >
-        <div class="mt-2">
+      <!-- БИК -->
+      <div>
+        <label class="text-sm font-medium text-gray-700">БИК</label>
+        <input
+          required
+          type="number"
+          class="mt-2 w-full px-3 py-2 bg-white text-gray-900 rounded-xl border border-gray-200 focus:outline-gray-700 focus:border-transparent"
+          placeholder="000000000"
+        />
+      </div>
+
+      <!-- Р/С -->
+      <div>
+        <label class="text-sm font-medium text-gray-700">Р/С</label>
+        <div class="relative mt-2">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            >407</span
+          >
           <input
             required
             type="number"
-            name="bik"
-            class="block w-full text-xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 outline-none"
+            class="w-full pl-12 pr-3 py-2 bg-white text-gray-900 rounded-xl border border-gray-200 focus:outline-gray-700 focus:border-transparent"
+            placeholder="00000000000000000"
           />
         </div>
       </div>
 
-      <div class="mb-4">
-        <label for="rs" class="block text-gray-900 font-medium text-xl"
-          >Р/С (начинается на 407)</label
-        >
-        <div class="mt-2">
-          <input
-            required
-            type="number"
-            name="rs"
-            class="block w-full text-xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 outline-none"
-          />
-        </div>
-      </div>
-
-      <div class="mb-4">
-        <label for="score" class="block text-gray-900 font-medium text-xl"
+      <!-- Корр. счет -->
+      <div>
+        <label class="text-sm font-medium text-gray-700"
           >Корреспондентский счет</label
         >
-        <div class="mt-2">
-          <input
-            required
-            type="number"
-            name="score"
-            class="block w-full text-xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 outline-none"
-          />
-        </div>
+        <input
+          required
+          type="number"
+          class="mt-2 w-full px-3 py-2 bg-white text-gray-900 rounded-xl border border-gray-200 focus:outline-gray-700 focus:border-transparent"
+          placeholder="00000000000000000000"
+        />
       </div>
 
-      <div class="mb-4">
-        <label for="bank" class="block text-gray-900 font-medium text-xl"
+      <!-- Банк -->
+      <div>
+        <label class="text-sm font-medium text-gray-700"
           >Наименование банка</label
         >
-        <div class="mt-2">
-          <input
-            required
-            type="text"
-            name="bank"
-            class="block w-full text-xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 outline-none"
-          />
-        </div>
+        <input
+          required
+          type="text"
+          class="mt-2 w-full px-3 py-2 bg-white text-gray-900 rounded-xl border border-gray-200 focus:outline-gray-700 focus:border-transparent"
+          placeholder="Введите название банка"
+        />
       </div>
 
-      <Button text="Сохранить" @click="back" class="w-full mt-8" />
+      <Button
+        text="Сохранить"
+        @click="savePersonal"
+        class="w-full !mt-12 !-mb-2"
+      />
+      <Button
+        text="Назад"
+        class="border border-black w-full mt-0"
+        isWhite
+        @click="back"
+      />
     </form>
-
-    <Button text="Назад" class="border border-black" isWhite @click="back" />
   </div>
 </template>

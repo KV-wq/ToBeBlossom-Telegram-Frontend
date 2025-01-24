@@ -16,7 +16,7 @@ const createOrder = () => {
 </script>
 
 <template>
-  <div class="container" data-aos="fade-right" data-aos-duration="500">
+  <div class="container">
     <h2 class="text-3xl text-center font-bold">Вывод средств</h2>
 
     <div class="mt-7">
@@ -65,7 +65,7 @@ const createOrder = () => {
     />
     <Button
       text="Назад"
-      class="border border-black mt-4"
+      class="border border-black mt-4 w-full"
       isWhite
       @click="back"
     />

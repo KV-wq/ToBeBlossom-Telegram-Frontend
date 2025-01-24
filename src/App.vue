@@ -13,7 +13,7 @@ onMounted(() => {
   });
 
   setTimeout(() => {
-    router.push("/profile");
+    router.push("/statistics");
   }, 1000);
 });
 </script>
