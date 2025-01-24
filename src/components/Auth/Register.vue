@@ -1,15 +1,25 @@
 <script setup>
 import { ref } from "vue";
+import router from "../../router/router";
 import Button from "../Button.vue";
 
 const checked = ref(false);
+const isVisible = ref(false);
+
+setTimeout(() => {
+  isVisible.value = true;
+}, 1500);
+
+const register = () => {
+  router.push("/profile");
+};
 </script>
 
 <template>
   <div class="container">
     <h2 class="text-4xl font-bold text-start">Регистрация</h2>
 
-    <form class="mt-5">
+    <form class="mt-5" @submit="register">
       <div class="flex flex-col gap-4">
         <div data-aos="fade-right" data-aos-duration="500">
           <label for="email" class="block text-gray-900 font-medium text-xl"
@@ -17,6 +27,7 @@ const checked = ref(false);
           >
           <div class="mt-2">
             <input
+              required
               type="email"
               name="email"
               class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
@@ -30,6 +41,7 @@ const checked = ref(false);
           >
           <div class="mt-2">
             <input
+              required
               type="text"
               name="lastname"
               class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
@@ -43,6 +55,7 @@ const checked = ref(false);
           >
           <div class="mt-2">
             <input
+              required
               type="text"
               name="name"
               class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
@@ -56,6 +69,7 @@ const checked = ref(false);
           >
           <div class="mt-2">
             <input
+              required
               type="text"
               name="fathname"
               class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
@@ -63,6 +77,10 @@ const checked = ref(false);
           </div>
         </div>
       </div>
+
+      <p class="text-xs text-gray-300 text-center mt-2">
+        ФИО нелья будет изменить
+      </p>
 
       <label
         data-aos="fade-right"
@@ -115,8 +133,9 @@ const checked = ref(false);
         text="Зарегистрироваться"
         class="px-auto w-full"
         :disabled="!checked"
+        type="submit"
       />
     </form>
-    <div class="w-full h-72"></div>
+    <div class="w-full h-72" v-if="isVisible"></div>
   </div>
 </template>

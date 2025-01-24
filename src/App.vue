@@ -3,8 +3,6 @@ import { onMounted, ref } from "vue";
 import AOS from "aos";
 import router from "./router/router";
 
-const target = ref(null);
-
 onMounted(() => {
   window.Telegram.WebApp.ready();
   AOS.init({
@@ -20,5 +18,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <router-view :ref="target"></router-view>
+  <router-view></router-view>
 </template>
