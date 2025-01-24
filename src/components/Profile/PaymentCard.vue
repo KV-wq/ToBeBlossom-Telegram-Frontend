@@ -34,7 +34,7 @@ const deleteIsVisible = ref(false);
     <p class="mt-2 text-nowrap">123 456 ..... 7890</p>
 
     <div
-      class="absolute bg-black/[.97] text-white inset-0 rounded-lg px-2"
+      class="absolute bg-stone-900 text-white inset-0 rounded-lg px-2"
       v-if="deleteIsVisible"
       data-aos="flip-right"
       data-aos-duration="400"

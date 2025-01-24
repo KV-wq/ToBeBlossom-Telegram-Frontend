@@ -17,27 +17,26 @@ const createOrder = () => {
 
 <template>
   <div class="container" data-aos="fade-right" data-aos-duration="500">
-    <h2 class="text-xl text-center font-bold">Вывод средств</h2>
+    <h2 class="text-3xl text-center font-bold">Вывод средств</h2>
 
-    <div class="mt-5">
-      <label for="lastname" class="block text-gray-900 font-medium text-xl"
-        >Сумма (₽)</label
-      >
+    <div class="mt-7">
       <div class="mt-2">
         <input
+          required
           v-model="money"
           type="text"
-          name="lastname"
-          class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 outline-none"
+          name="money"
+          class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+          placeholder="Сумма (₽)"
         />
       </div>
-      <div class="flex justify-between w-full text-xs mt-0.5">
+      <div class="flex justify-between w-full text-xs mt-2 px-2">
         <p>Доступно: 123 456 ₽</p>
         <p>Останется: 123 456 ₽</p>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-2 mt-6 mb-4">
+    <div class="grid grid-cols-2 gap-2 mt-6 mb-6">
       <PaymentCard
         noOptions
         :class="
@@ -64,6 +63,11 @@ const createOrder = () => {
       @click="createOrder"
       :disabled="selectedMethod === null || money === ''"
     />
-    <Button text="Назад" class="border border-black" isWhite @click="back" />
+    <Button
+      text="Назад"
+      class="border border-black mt-4"
+      isWhite
+      @click="back"
+    />
   </div>
 </template>

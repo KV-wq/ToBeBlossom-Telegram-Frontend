@@ -15,42 +15,34 @@ const register = () => {
 
     <form class="mt-5" @submit.prevent="register">
       <div class="flex flex-col gap-6">
-        <div>
-          <input
-            required
-            type="text"
-            name="firstname"
-            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
-            placeholder="Имя"
-          />
-        </div>
-        <div>
-          <input
-            required
-            type="text"
-            name="secondname"
-            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
-            placeholder="Фамилия"
-          />
-        </div>
-        <div>
-          <input
-            required
-            type="text"
-            name="lastname"
-            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
-            placeholder="Отчество (при наличии)"
-          />
-        </div>
-        <div>
-          <input
-            required
-            type="email"
-            name="email"
-            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
-            placeholder="Email"
-          />
-        </div>
+        <input
+          required
+          type="text"
+          name="firstname"
+          class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+          placeholder="Имя"
+        />
+        <input
+          required
+          type="text"
+          name="secondname"
+          class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+          placeholder="Фамилия"
+        />
+        <input
+          required
+          type="text"
+          name="lastname"
+          class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+          placeholder="Отчество (при наличии)"
+        />
+        <input
+          required
+          type="email"
+          name="email"
+          class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+          placeholder="Email"
+        />
       </div>
 
       <p class="text-center font-extralight text-xs text-gray-600 mt-6">
