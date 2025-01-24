@@ -3,8 +3,6 @@ import { ref } from "vue";
 import router from "../../router/router";
 import Button from "../Button.vue";
 
-const checked = ref(false);
-
 const register = () => {
   router.push("/profile");
 };
@@ -111,12 +109,7 @@ const register = () => {
         >
         и соглашаетесь с <span class="text-black underline">офертой</span>
       </p>
-      <Button
-        text="Продолжить"
-        class="w-full mt-3"
-        :disabled="!checked"
-        type="submit"
-      />
+      <Button text="Продолжить" class="w-full mt-3" type="submit" />
     </form>
 
     <p class="text-center font-light text-gray-600 mt-3">
