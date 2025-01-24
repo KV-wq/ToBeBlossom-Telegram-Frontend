@@ -17,14 +17,14 @@ const deleteIsVisible = ref(false);
   >
     <div class="flex justify-between" :class="{ '!justify-center': noOptions }">
       <img
-        src="../../assets/icons/bin.svg"
+        src="../../assets/Icons/bin.svg"
         class="size-5"
         @click="() => (deleteIsVisible = true)"
         v-if="!noOptions"
       />
-      <img src="../../assets/icons/bank.svg" class="size-10" />
+      <img src="../../assets/Icons/bank.svg" class="size-10" />
       <img
-        src="../../assets/icons/pencil.svg"
+        src="../../assets/Icons/pencil.svg"
         class="size-5"
         v-if="!noOptions"
       />

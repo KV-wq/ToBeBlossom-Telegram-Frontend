@@ -5,7 +5,7 @@ import router from "../router/router";
 <template>
   <div class="container relative">
     <img
-      src="../assets/icons/arrow.svg"
+      src="../assets/Icons/arrow.svg"
       class="absolute size-7 rotate-90"
       width="30"
       height="30"
