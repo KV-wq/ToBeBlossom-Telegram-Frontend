@@ -97,7 +97,7 @@ onUnmounted(() => {
       />
 
       <p
-        class="text-black/80 text-center mt-3 underline"
+        class="text-gray-500 text-center mt-3 underline"
         @click="() => useAuthStore().decrementStage()"
       >
         Изменить номер телефона

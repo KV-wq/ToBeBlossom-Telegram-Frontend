@@ -30,24 +30,27 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div class="container" data-aos="fade-right" data-aos-duration="500">
-    <h2 class="text-4xl font-bold text-start">
+  <div
+    class="container max-w-2xl mx-auto px-4 py-8"
+    data-aos="fade-right"
+    data-aos-duration="500"
+  >
+    <h2 class="text-4xl font-bold text-start leading-tight">
       Введите<br />
       номер телефона
     </h2>
 
-    <form class="mx-auto mt-16" @submit="submitForm">
+    <form class="mt-16" @submit="submitForm">
       <div class="relative">
         <div
-          class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none"
+          class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
         >
-          <span class="text-gray-800 text-2xl font-semibold">+7</span>
+          <span class="text-gray-900 text-lg font-medium">+7</span>
         </div>
         <input
           type="tel"
           id="phone-input"
-          aria-describedby="phone-helper-text"
-          class="border border-black text-gray-800 text-2xl font-semibold rounded-lg block w-full ps-11 p-2.5 placeholder:text-gray-500 placeholder:font-semibold transition-all"
+          class="block w-full ps-9 py-2.5 px-3 text-lg font-medium border border-gray-300 hover:border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200 placeholder:text-gray-400 placeholder:font-normal"
           v-model="formattedNumber"
           @input="handleInput"
           placeholder="(000) 555-55-55"
@@ -58,7 +61,7 @@ const submitForm = () => {
       <Button
         text="Продолжить"
         :disabled="formattedNumber.length !== 15"
-        class="mt-5"
+        class="mt-5 w-full"
       />
     </form>
   </div>

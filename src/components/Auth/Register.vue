@@ -4,11 +4,6 @@ import router from "../../router/router";
 import Button from "../Button.vue";
 
 const checked = ref(false);
-const isVisible = ref(false);
-
-setTimeout(() => {
-  isVisible.value = true;
-}, 1500);
 
 const register = () => {
   router.push("/profile");
@@ -16,73 +11,55 @@ const register = () => {
 </script>
 
 <template>
-  <div class="container">
-    <h2 class="text-4xl font-bold text-start">Регистрация</h2>
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="text-4xl font-bold text-start">Создать аккаунт</h2>
+    <p className="text-gray-500 mt-2 mb-8">Введите данные для регистрации</p>
 
-    <form class="mt-5" @submit="register">
-      <div class="flex flex-col gap-4">
-        <div data-aos="fade-right" data-aos-duration="500">
-          <label for="email" class="block text-gray-900 font-medium text-xl"
-            >E-mail</label
-          >
-          <div class="mt-2">
-            <input
-              required
-              type="email"
-              name="email"
-              class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
-            />
-          </div>
-        </div>
-
+    <form class="mt-5" @submit.prevent="register">
+      <div class="flex flex-col gap-6">
         <div data-aos="fade-left" data-aos-duration="500">
-          <label for="lastname" class="block text-gray-900 font-medium text-xl"
-            >Фамилия</label
-          >
-          <div class="mt-2">
-            <input
-              required
-              type="text"
-              name="lastname"
-              class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
-            />
-          </div>
+          <input
+            required
+            type="text"
+            name="firstname"
+            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+            placeholder="Имя"
+          />
         </div>
-
         <div data-aos="fade-right" data-aos-duration="500">
-          <label for="name" class="block text-gray-900 font-medium text-xl"
-            >Имя</label
-          >
-          <div class="mt-2">
-            <input
-              required
-              type="text"
-              name="name"
-              class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
-            />
-          </div>
+          <input
+            required
+            type="text"
+            name="secondname"
+            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+            placeholder="Фамилия"
+          />
         </div>
-
         <div data-aos="fade-left" data-aos-duration="500">
-          <label for="fathname" class="block text-gray-900 font-medium text-xl"
-            >Отчество</label
-          >
-          <div class="mt-2">
-            <input
-              required
-              type="text"
-              name="fathname"
-              class="block w-full text-2xl rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800"
-            />
-          </div>
+          <input
+            required
+            type="text"
+            name="lastname"
+            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+            placeholder="Отчество (при наличии)"
+          />
+        </div>
+        <div data-aos="fade-right" data-aos-duration="500">
+          <input
+            required
+            type="email"
+            name="email"
+            class="block w-full text-gray-800 text-lg rounded-2xl bg-white py-3 px-4 border border-transparent border-gray-200 focus:outline-none focus:ring-2 transition-all duration-200 focus:ring-gray-500 shadow-sm placeholder-gray-400"
+            placeholder="Email"
+          />
         </div>
       </div>
-
+      <!-- 
       <p class="text-xs text-gray-300 text-center mt-2">
         ФИО нелья будет изменить
-      </p>
+      </p> -->
 
-      <label
+      <!-- <label
         data-aos="fade-right"
         data-aos-duration="500"
         class="mt-8 mb-4 relative text-black flex cursor-pointer gap-3"
@@ -121,21 +98,30 @@ const register = () => {
         >
           Даю
           <span class="underline"
-            >согласие на обработку персональных <br />
-            данных</span
+            >согласие на обработку персональных <br />данных</span
           >
           и соглашаюсь
           <span class="underline">с офертой</span>
         </p>
-      </label>
-
+      </label> -->
+      <p class="text-center font-extralight text-xs text-gray-600 mt-6">
+        Нажимая кнопку "Продолжить", вы даете
+        <span class="text-black underline"
+          >согласие на обработку персональных данных</span
+        >
+        и соглашаетесь с <span class="text-black underline">офертой</span>
+      </p>
       <Button
-        text="Зарегистрироваться"
-        class="px-auto w-full"
+        text="Продолжить"
+        class="w-full mt-3"
         :disabled="!checked"
         type="submit"
       />
     </form>
-    <div class="w-full h-72" v-if="isVisible"></div>
+
+    <p class="text-center font-light text-gray-600 mt-3">
+      Уже есть аккаунт? <span class="text-black font-semibold">Войти</span>
+    </p>
+    <div class="w-full h-64"></div>
   </div>
 </template>
