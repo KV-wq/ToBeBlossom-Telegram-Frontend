@@ -9,7 +9,7 @@ const register = () => {
 </script>
 
 <template>
-  <div class="container mx-auto px-4 py-8">
+  <div class="container">
     <h2 class="text-4xl font-bold text-start">Создать аккаунт</h2>
     <p className="text-gray-500 mt-2 mb-8">Введите данные для регистрации</p>
 
@@ -115,6 +115,6 @@ const register = () => {
     <p class="text-center font-light text-gray-600 mt-3">
       Уже есть аккаунт? <span class="text-black font-semibold">Войти</span>
     </p>
-    <div class="w-full h-64"></div>
+    <!-- <div class="w-full h-64"></div> -->
   </div>
 </template>
