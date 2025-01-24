@@ -13,8 +13,8 @@ onMounted(() => {
   });
 
   setTimeout(() => {
-    router.push("/statistics");
-  }, 1000);
+    router.push("/home");
+  }, 1500);
 });
 </script>
 
