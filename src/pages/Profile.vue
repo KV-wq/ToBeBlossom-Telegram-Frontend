@@ -12,7 +12,7 @@ const addPersonal = () => {
 <template>
   <div class="container relative">
     <img
-      src="../assets/icons/arrow.svg"
+      src="../assets/Icons/arrow.svg"
       class="absolute size-9 rotate-90"
       width="36"
       height="36"
