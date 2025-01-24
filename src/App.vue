@@ -12,8 +12,8 @@ onMounted(() => {
   });
 
   setTimeout(() => {
-    router.push("/auth");
-  }, 3000);
+    router.push("/home");
+  }, 1000);
 });
 </script>
 
