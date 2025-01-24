@@ -33,7 +33,7 @@ const addPersonal = () => {
       >
         <h2>Иванов Иван Иванович</h2>
         <span
-          ><img src="../assets//icons/verified.svg" width="30" height="30"
+          ><img src="../assets/Icons/verified.svg" width="30" height="30"
         /></span>
       </div>
 
