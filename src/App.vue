@@ -5,6 +5,7 @@ import router from "./router/router";
 
 onMounted(() => {
   window.Telegram.WebApp.ready();
+  window.Telegram.WebApp.expand();
   AOS.init({
     duration: 500,
     easing: "ease-out",
