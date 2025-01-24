@@ -13,7 +13,7 @@ onMounted(() => {
   });
 
   setTimeout(() => {
-    router.push("/auth");
+    router.push("/profile");
   }, 1000);
 });
 </script>
