@@ -15,7 +15,7 @@ const register = () => {
 
     <form class="mt-5" @submit.prevent="register">
       <div class="flex flex-col gap-6">
-        <div data-aos="fade-left" data-aos-duration="500">
+        <div>
           <input
             required
             type="text"
@@ -24,7 +24,7 @@ const register = () => {
             placeholder="Имя"
           />
         </div>
-        <div data-aos="fade-right" data-aos-duration="500">
+        <div>
           <input
             required
             type="text"
@@ -33,7 +33,7 @@ const register = () => {
             placeholder="Фамилия"
           />
         </div>
-        <div data-aos="fade-left" data-aos-duration="500">
+        <div>
           <input
             required
             type="text"
@@ -42,7 +42,7 @@ const register = () => {
             placeholder="Отчество (при наличии)"
           />
         </div>
-        <div data-aos="fade-right" data-aos-duration="500">
+        <div>
           <input
             required
             type="email"
